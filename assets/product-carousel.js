@@ -5,6 +5,7 @@
   const slides = [...root.querySelectorAll(".hc-slide")],
     vis = [...root.querySelectorAll(".hc-v")],
     dots = [...root.querySelectorAll(".hc-dot")],
+    bgs = [...root.closest(".hero").querySelectorAll(".hc-bg")],
     DUR = 3500,
     reduce = matchMedia("(prefers-reduced-motion:reduce)").matches;
   let i = 0,
@@ -28,6 +29,7 @@
       s.setAttribute("aria-hidden", on ? "false" : "true");
     });
     vis.forEach((v, k) => v.classList.toggle("is-active", k === i));
+    bgs.forEach((b, k) => b.classList.toggle("is-active", k === i));
     dots.forEach((d, k) => {
       d.setAttribute("aria-current", k === i ? "true" : "false");
       d.classList.remove("run");
@@ -37,6 +39,8 @@
     arm();
   }
   dots.forEach((d, k) => (d.onclick = () => go(k)));
+  root.querySelector(".hc-arrow.prev").addEventListener("click", () => go(i - 1));
+  root.querySelector(".hc-arrow.next").addEventListener("click", () => go(i + 1));
   root.addEventListener("mouseenter", () => {
     hover = true;
     arm();

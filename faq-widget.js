@@ -18,8 +18,8 @@
       a: 'Enter your container or BL number in the tracking box on the home page to see its latest status.',
       link: { text: 'Go to tracking', href: 'portlinks-homepage.html' } },
     { q: 'How is support provided?',
-      a: 'Our team offers 24/7 support. You can also use the chat assistant or send us an inquiry and we will get back to you.',
-      link: { text: 'Send inquiry', href: 'inquiry.html' } }
+      a: 'Our team offers 24/7 support. You can also use the chat assistant or the Connect With Us form, and we will get back to you.',
+      link: { text: 'Connect With Us', href: '#demo-dialog' } }
   ];
 
   var css = '\
